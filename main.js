@@ -1,8 +1,8 @@
 import * as THREE from 'three';
 import './style.css'
 import {OrbitControls} from 'three/examples/jsm/controls/OrbitControls';
-import Section1 from './src/section1';
-import Section3 from './src/section3';
+import Section1 from './src/Section1';
+import Section3 from './src/Section3';
 import SectionParticles from './src/components/SectionParticles';
 import gsap from 'gsap/gsap-core';
 import TetrahedronParticles from './src/components/TetrahedronParticles';
