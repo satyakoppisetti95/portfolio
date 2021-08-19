@@ -10,7 +10,7 @@ export default class SmokeEmitter{
 
     init(){
         const textureLoader = new THREE.TextureLoader();
-        textureLoader.load('../../smoke.png', texture => {
+        textureLoader.load('https://raw.githubusercontent.com/satyakoppisetti95/portfolio/master/smoke.png', texture => {
             const smokeMaterial = new THREE.MeshLambertMaterial({
               color: 0xffffff,
               map: texture,
