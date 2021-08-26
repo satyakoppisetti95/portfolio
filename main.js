@@ -1,19 +1,14 @@
 import * as THREE from 'three';
 import './style.css'
-import {OrbitControls} from 'three/examples/jsm/controls/OrbitControls';
 import Section1 from './src/Section1';
 import Section3 from './src/Section3';
 import SectionParticles from './src/components/SectionParticles';
 import gsap from 'gsap/gsap-core';
 import Section2 from './src/section2';
-import { VRButton } from 'three/examples/jsm/webxr/VRButton.js';
-import buildController from './src/xrcontrols';
-import { XRControllerModelFactory } from 'three/examples/jsm/webxr/XRControllerModelFactory.js';
 
 var scene = new THREE.Scene();
 
-
-var camera = new THREE.PerspectiveCamera(60,window.innerWidth/window.innerHeight,0.1,1000)
+var camera = new THREE.PerspectiveCamera(60,window.innerWidth/window.innerHeight,0.1,1000);
 camera.position.z = 5;
 
 
@@ -109,30 +104,6 @@ scene.add(light);
 // scene.add(lightHelper);
 
 
-const controller = renderer.xr.getController( 0 );
-scene.add( controller );
-
-controller.addEventListener( 'connected', function ( event ) {
-
-  this.add( buildController( event.data ) );
-
-} );
-controller.addEventListener( 'disconnected', function () {
-
-  this.remove( this.children[ 0 ] );
-
-} );
-
-controller.addEventListener( 'selectstart', function(){
-  moveToNextSection();
-} );
-
-controller.addEventListener( 'squeezestart', function(){
-	moveToPrevSection();
-  } );
-
-
-
 let s1 = new Section1(scene);
 let s2 = new Section2(scene);
 let s3 = new Section3(scene);
@@ -154,7 +125,6 @@ document.getElementById('app').addEventListener('mousemove',(event)=>{
 
 // const controls = new OrbitControls(camera,renderer.domElement);
 
-document.body.appendChild( VRButton.createButton( renderer ) );
 let t = 0;
 renderer.setAnimationLoop( function () {
 	renderer.render( scene, camera );
