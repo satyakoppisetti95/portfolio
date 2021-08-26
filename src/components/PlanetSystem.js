@@ -18,12 +18,12 @@ export default class PlanetSystem{
 
         const pGeometry1 = new THREE.SphereGeometry( 0.1, 8, 4 );
         this.planet1 = new THREE.Mesh(pGeometry1,sMaterial);
-        this.planet1.position.set(1.5,0,0);
+        this.planet1.position.set(-1.5,0,0);
         this.pivotPoint.add(this.planet1);
 
         const pGeometry2 = new THREE.SphereGeometry( 0.15, 10, 5 );
         this.planet2 = new THREE.Mesh(pGeometry2,sMaterial);
-        this.planet2.position.set(-2.5,0,0);
+        this.planet2.position.set(2.5,0,0);
         this.pivotPoint.add(this.planet2);
 
         const curve1 = new THREE.EllipseCurve(
